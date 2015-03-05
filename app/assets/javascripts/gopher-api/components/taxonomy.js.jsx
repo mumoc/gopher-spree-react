@@ -1,7 +1,7 @@
 var Taxonomy = React.createClass({
   render: function() {
     return (
-      <h4 class='taxonomy-root'>{ this.props.taxonomy.name }</h4>
+      <h4 className='taxonomy-root'>{ this.props.taxonomy.name }</h4>
     )
   }
 });
@@ -15,7 +15,7 @@ var TaxonomiesList = React.createClass({
     });
 
     return (
-      <nav id='taxonomies' class='sidebar-item'>
+      <nav id='taxonomies' className='sidebar-item'>
         { taxonomies }
       </nav>
     )

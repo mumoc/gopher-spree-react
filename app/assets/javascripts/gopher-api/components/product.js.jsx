@@ -1,19 +1,19 @@
 var Product = React.createClass({
   render: function() {
     return (
-      <div className='col-md-3 product-list-item' data-hook='products_list_item' itemscope='' itemtype='http://schema.org/Product'>
+      <div className='col-md-3 product-list-item' data-hook='products_list_item' itemScope='' itemType='http://schema.org/Product'>
         <div className='panel panel-defadivt'>
             <div className='panel-body text-center product-body'>
-              <a itemprop='url' href={ '/products/' + this.props.product.slug } >
-                <img itemprop='image' alt={ this.props.product.name } src={ this.props.product.master.images[0].small_url } />
+              <a itemProp='url' href={ '/products/' + this.props.product.slug } >
+                <img itemProp='image' alt={ this.props.product.name } src={ this.props.product.master.images[0].small_url } />
               </a>
               <br/>
-              <a className='info' itemprop='name' title={ this.props.product.name } href={ '/products/' + this.props.product.slug }>{ this.props.product.name }</a>
+              <a className='info' itemProp='name' title={ this.props.product.name } href={ '/products/' + this.props.product.slug }>{ this.props.product.name }</a>
             </div>
 
             <div className='panel-footer text-center'>
-              <span itemprop='offers' itemscope='' itemtype='http://schema.org/Offer'>
-                <span className='price seldivng lead' itemprop='price'>{ this.props.product.price }</span>
+              <span itemProp='offers' itemScope='' itemType='http://schema.org/Offer'>
+                <span className='price seldivng lead' itemProp='price'>{ this.props.product.price }</span>
               </span>
             </div>
         </div>
