@@ -254,6 +254,8 @@ GEM
     premailer-rails (1.8.0)
       actionmailer (>= 3, < 5)
       premailer (~> 1.7, >= 1.7.9)
+    quiet_assets (1.0.3)
+      railties (>= 3.1, < 5.0)
     rabl (0.9.4.pre1)
       activesupport (>= 2.3.14)
     rack (1.6.0)
@@ -365,6 +367,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  quiet_assets
   rails (= 4.2.0)
   react-rails (~> 1.0.0.pre)!
   sass-rails (~> 5.0)
