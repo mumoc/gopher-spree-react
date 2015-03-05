@@ -1,4 +1,4 @@
-var Product = React.createClass({
+var ProductListItem = React.createClass({
   render: function() {
     return (
       <div className='col-md-3 product-list-item' data-hook='products_list_item' itemScope='' itemType='http://schema.org/Product'>
@@ -27,7 +27,7 @@ var ProductsList = React.createClass({
     var products = [];
 
     this.props.products.forEach(function(product){
-      products.push(<Product product={ product } key={ product.id } />);
+      products.push(<ProductListItem product={ product } key={ product.id } />);
     });
 
     return (
