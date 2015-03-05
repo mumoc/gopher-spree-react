@@ -2,7 +2,7 @@ var Product = React.createClass({
   render: function() {
     return (
       <div className='col-md-3 product-list-item' data-hook='products_list_item' itemScope='' itemType='http://schema.org/Product'>
-        <div className='panel panel-defadivt'>
+        <div className='panel panel-default'>
             <div className='panel-body text-center product-body'>
               <a itemProp='url' href={ '/products/' + this.props.product.slug } >
                 <img itemProp='image' alt={ this.props.product.name } src={ this.props.product.master.images[0].small_url } />
@@ -31,7 +31,7 @@ var ProductsList = React.createClass({
     });
 
     return (
-      <div id='products' classNameName='row'>
+      <div id='products' className='row'>
         { products }
       </div>
     )
@@ -54,7 +54,7 @@ var ProductsSection = React.createClass({
     });
   },
 
-  //This method is called once in the divfetime of the className
+  //This method is called once in the divfetime of the class
   getInitialState: function() {
     return { products: [] };
   },
