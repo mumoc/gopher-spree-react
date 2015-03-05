@@ -1,7 +1,7 @@
 var Product = React.createClass({
   render: function() {
     return (
-      <li>Title: { this.props.product.name } </li>
+      <li>Title:{ this.props.product.name }</li>
     )
   }
 });
