@@ -1,7 +1,23 @@
 var Product = React.createClass({
   render: function() {
     return (
-      <li>Title:{ this.props.product.name }</li>
+      <div className='col-md-3 product-list-item' data-hook='products_list_item' itemscope='' itemtype='http://schema.org/Product'>
+        <div className='panel panel-defadivt'>
+            <div className='panel-body text-center product-body'>
+              <a itemprop='url' href={ '/products/' + this.props.product.slug } >
+                <img itemprop='image' alt={ this.props.product.name } src={ this.props.product.master.images[0].small_url } />
+              </a>
+              <br/>
+              <a className='info' itemprop='name' title={ this.props.product.name } href={ '/products/' + this.props.product.slug }>{ this.props.product.name }</a>
+            </div>
+
+            <div className='panel-footer text-center'>
+              <span itemprop='offers' itemscope='' itemtype='http://schema.org/Offer'>
+                <span className='price seldivng lead' itemprop='price'>{ this.props.product.price }</span>
+              </span>
+            </div>
+        </div>
+      </div>
     )
   }
 });
@@ -15,7 +31,9 @@ var ProductsList = React.createClass({
     });
 
     return (
-      <ul>{ products }</ul>
+      <div id='products' classNameName='row'>
+        { products }
+      </div>
     )
   }
 });
@@ -36,7 +54,7 @@ var ProductsSection = React.createClass({
     });
   },
 
-  //This method is called once in the lifetime of the class
+  //This method is called once in the divfetime of the className
   getInitialState: function() {
     return { products: [] };
   },
@@ -48,10 +66,9 @@ var ProductsSection = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div data-hook='homepage_products'>
         <ProductsList products= { this.state.products } />
       </div>
     )
   }
 });
-

@@ -2,9 +2,6 @@
   <div id='taxonomies-list' data-hook='homepage_sidebar_navigation'></div>
 <% end %>
 
-<div id='products-list' data-hook='homepage_products'></div>
-
-
 <%- content_for :javascripts do %>
   <script type='text/javascript'>
     $(document).ready(function() {
@@ -14,7 +11,7 @@
 
       var productsUrl = 'http://localhost:5000/api/products?token=d89ffcec5c8adfc0992c58968f5efa14bab1ee5d3c3f625e';
       var reactProduct = React.createElement(ProductsSection, { url: productsUrl });
-      React.render(reactProduct, document.getElementById('products-list'));
+      React.render(reactProduct, document.getElementById('content'));
     });
   </script>
 <% end %>
