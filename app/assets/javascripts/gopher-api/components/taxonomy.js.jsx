@@ -1,7 +1,12 @@
 var Taxonomy = React.createClass({
   render: function() {
     return (
-      <h4 className='taxonomy-root'>{ this.props.taxonomy.name }</h4>
+      //There is no way to return more than one element
+      //(I like it, but spree is not so good speaking of html structure)
+      <div>
+        <h4 className='taxonomy-root'>{ 'Shop by ' + this.props.taxonomy.name }</h4>
+        <TaxonTree taxon={ this.props.taxonomy.root } />
+      </div>
     )
   }
 });
@@ -39,7 +44,7 @@ var TaxonomiesSection = React.createClass({
   },
 
   getInitialState: function() {
-    return { taxonomies: [{ name: 'Categories', id: 1 }] };
+    return { taxonomies: [] };
   },
 
   componentDidMount: function() {
