@@ -1,0 +1,2 @@
+<!-- insert_bottom 'body' -->
+<%= yield :javascripts %>
