@@ -45,7 +45,9 @@ var ProductsSection = React.createClass({
       dataType: 'json',
 
       success: function(response) {
-        this.setState({ products: response.products });
+        products = response.products;
+        delete response.products;
+        this.setState({ products: products, pagination: response });
       }.bind(this),
 
       error: function(xhr, status, err) {
@@ -56,7 +58,7 @@ var ProductsSection = React.createClass({
 
   //This method is called once in the divfetime of the class
   getInitialState: function() {
-    return { products: [] };
+    return { products: [], pagination: {} };
   },
 
   //This method is called when the component is rendered
@@ -68,6 +70,7 @@ var ProductsSection = React.createClass({
     return (
       <div data-hook='homepage_products'>
         <ProductsList products= { this.state.products } />
+        <Paginator pagination= { this.state.pagination } />
       </div>
     )
   }

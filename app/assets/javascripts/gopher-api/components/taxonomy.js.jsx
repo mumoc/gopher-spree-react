@@ -3,6 +3,7 @@ var Taxonomy = React.createClass({
     return (
       //There is no way to return more than one element
       //(I like it, but spree is not so good speaking of html structure)
+      //That's the reasong of the extra div here
       <div>
         <h4 className='taxonomy-root'>{ 'Shop by ' + this.props.taxonomy.name }</h4>
         <TaxonTree taxon={ this.props.taxonomy.root } />
